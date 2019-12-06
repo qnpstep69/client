@@ -64,7 +64,7 @@ const TeamJourneyContainer = (props: Props) => {
     case RPCChatTypes.JourneycardType.addPeople:
       actions = [{label: 'Add people to the team', onClick: props.onAddPeopleToTeam}]
       image = 'icon-illustration-friends-96'
-      text = `Do you know people interested in joining? *${props.teamname}* is open to anyone.`
+      text = props.message.openTeam ? `Do you know people interested in joining? *${props.teamname}* is open to anyone.` : `Do you know people interested in joining *${props.teamname}*?`
       break
     case RPCChatTypes.JourneycardType.createChannels:
       actions = [{label: 'Create chat channels', onClick: props.onCreateChatChannels}]
